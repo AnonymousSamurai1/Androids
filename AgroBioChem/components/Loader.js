@@ -2,9 +2,9 @@ import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { useNavigation } from '@react-navigation/native';
-import Farmer from '../assets/farmer.png'
-import Tractor from '../assets/tractor.png'
-import Scientist from '../assets/scientist.png'
+import Farmer from '../assets/farmer.png';
+import Tractor from '../assets/tractor.png';
+import Scientist from '../assets/scientist.png';
 
 function Loader() {
   const navigation = useNavigation();
@@ -12,38 +12,39 @@ function Loader() {
   const slideImage = [
     {
       image: Farmer,
-      header: "Empowering Farmers",
-      description: "Enhancing yields through innovation and agro-biochemical expertise"
+      header: 'Empowering Farmers',
+      description:
+        'Enhancing yields through innovation and agro-biochemical expertise',
     },
     {
       image: Tractor,
-      header: "Driving Sustainable Change",
-      description: "Solutions designed for a healthier, greener agricultural future"
+      header: 'Driving Sustainable Change',
+      description:
+        'Solutions designed for a healthier, greener agricultural future',
     },
     {
       image: Scientist,
-      header: "Science in Every Seed",
-      description: "Powering innovation where biotechnology meets real-world farming"
+      header: 'Science in Every Seed',
+      description:
+        'Powering innovation where biotechnology meets real-world farming',
     },
-  ]
+  ];
 
   return (
     <View style={styles.container}>
       <Swiper autoplay loop={true} activeDotColor="#66B302">
-        {
-          slideImage.map((each, index)=>(
+        {slideImage.map((each, index) => (
           <View style={styles.slide} key={index}>
             <Image source={each.image} style={styles.image} />
             <Text style={styles.header}>{each.header}</Text>
             <Text style={styles.text}>{each.description}</Text>
           </View>
-          ))
-        }
+        ))}
       </Swiper>
 
       <View style={styles.mainButton}>
-        <TouchableOpacity 
-          style={styles.buttonSubA} 
+        <TouchableOpacity
+          style={styles.buttonSubA}
           onPress={() => navigation.navigate('Intro')}
         >
           <Text style={styles.buttonTextA}>GET STARTED</Text>
@@ -54,7 +55,10 @@ function Loader() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   slide: {
     flex: 1,
     alignItems: 'center',
